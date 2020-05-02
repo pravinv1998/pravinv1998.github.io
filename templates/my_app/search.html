@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %} New Search {% endblock %}
+
+{% block body %}
+
+
+ {% load static %}
+<!--<div class="container" >-->
+
+    <form action=" {% url 'new_search' %} " method="post">
+        {% csrf_token %}
+        <input type="search" name="search" id="search" placeholder="Search" autofocus >
+         <button class="btn waves-effect waves-light blue  lighten-1 " type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+    </form>
+
+
+
+    {% if alluser %}
+         {% for user in alluser %}
+            <h4> {{ user.name }} </h4>
+            <h6> {{ user.addr }} </h6>
+         {% empty %}
+            <li>No User Avalable....</li>
+         {% endfor %}
+    {% endif %}
+<!--</div>-->
+
+
+<div class="row">
+
+    <div class="col s4">
+      <div class="card">
+        <div class="card-image">
+          <img src=" https://materializecss.com/images/sample-1.jpg ">
+          <span class="card-title">Card Title</span>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col s4">
+      <div class="card">
+        <div class="card-image">
+          <img src=" https://materializecss.com/images/sample-1.jpg ">
+          <span class="card-title">Card Title</span>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col s4">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://materializecss.com/images/sample-1.jpg">
+          <span class="card-title">Card Title</span>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+{% endblock %}
